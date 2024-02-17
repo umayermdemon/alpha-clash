@@ -1,7 +1,13 @@
 function keyboardPress(e){
   const playerPressed= e.key;
   const currentAlphabet=document.getElementById('current-alphabet').innerText.toLowerCase();
-  console.log(playerPressed, currentAlphabet)
+  if(playerPressed==='Escape'){
+    gameOver();
+  }
+  if(playerPressed==='F4'){
+    exitGame();
+  }
+
   if(currentAlphabet===playerPressed){
     const currentScore=getTextElementById('current-score');
     const newScore= currentScore + 1;
@@ -24,9 +30,9 @@ function keyboardPress(e){
     // let newLife=currentLife-1;
     // currentLifeElement.innerText=newLife;
     if(currentLife<=1){
-      addElementById('play-ground')
-      hideElementById('result')
+      gameOver();
     }
+    
   }
 }
 
@@ -47,6 +53,25 @@ function play(){
   
   hideElementById('play-ground');
   addElementById('home');
-  
+  addElementById('result');
+  setTextElementById('current-life', 5);
+  setTextElementById('current-score', 0);
   continueGame()
+}
+
+
+function gameOver(){
+  addElementById('play-ground');
+  addElementById('home')
+  hideElementById('result');
+  const lastScore=getTextElementById('current-score');
+  setTextElementById('final-score', lastScore)
+  const currentAlphabet=document.getElementById('current-alphabet').innerText;
+  removeBackgroundById(currentAlphabet);
+}
+
+function exitGame(){
+  addElementById('result');
+  addElementById('play-ground');
+  hideElementById('home')
 }

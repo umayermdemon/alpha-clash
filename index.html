@@ -29,9 +29,9 @@
     </section>
 
     <section id="play-ground"  class="hidden">
-      <div class="pt-36">
+      <div class=" flex flex-col gap-16 min-h-screen items-center justify-center">
         <!-- Artboard -->
-      <div class="artboard artboard-horizontal mx-auto justify-center phone-6 bg-[#FFFFFFB2] border-8 border-[#010313CC] rounded-xl">
+      <div class="artboard artboard-horizontal   phone-6 bg-[#FFFFFFB2] border-8 border-[#010313CC] rounded-xl">
         <div class= " flex justify-center">
           <p class="bg-[#010313CC] text-white  p-2 rounded-b-xl">Don't watch keyboard  while playing...</p>
         </div>
@@ -41,7 +41,7 @@
         
         </div>
         <!-- Keyboard -->
-        <div class="pt-24 ">
+        <div class="">
         <div class="flex justify-center gap-1 my-1 w-full">
           <kbd id="q" class="kbd">q</kbd>
           <kbd id="w" class="kbd">w</kbd>
@@ -77,7 +77,7 @@
         </div>  
         </div>
           <!-- life & score -->
-        <div class="flex flex-row justify-around">
+        <div class="flex flex-row justify-around w-full">
           <button class="btn bg-[#894189] hover:bg-[#894189] text-white rounded-full border-none">
             Life
             <img src="images/heart.svg" alt="">
@@ -89,17 +89,26 @@
             <span id="current-score">0</span>
           </button>
         </div>
+        <div class="text-lg text-[red]">
+          <p>If you want to end the game, please press the 'Esc' button.</p>
+        </div>
+        <div class="text-lg text-[pink]">
+          <p>Return Home? -- Pressed 'F4'</p>
+        </div>
       </div>
     </section>
 
     <section id="result" class="hidden">
-      <div class="min-h-screen flex items-center  justify-center">
+      <div class="min-h-screen flex flex-col gap-8 items-center  justify-center">
       <div class="text-white  space-y-4 bg-[#FFFFFF33] text-center p-6 rounded-xl">
       <h1 class="text-5xl font-extrabold">Game Over!</h1>
       <h2 class="text-4xl font-extrabold">Score:<span id="final-score" class="pl-5">0</span></h2>
-      <button class="btn">Play Again</button>
+      <button onclick="play()" class="btn">Play Again</button>
       <p>Practice will make you Pro</p>
      </div>
+     <div class="text-lg text-[pink]">
+      <p>Return Home? -- Pressed 'F4'</p>
+    </div>
       </div>
      
     </section>
