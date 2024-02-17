@@ -14,6 +14,7 @@ function keyboardPress(e) {
     const currentScore = getTextElementById("current-score");
     const newScore = currentScore + 1;
     setTextElementById("current-score", newScore);
+    
     // ......................................................................................
     // const currentScoreElement=document.getElementById('current-score');
     // const currentScore= parseInt(currentScoreElement.innerText);
@@ -31,6 +32,9 @@ function keyboardPress(e) {
     // currentLifeElement.innerText=newLife;
     if (currentLife <= 1) {
       gameOver();
+    }
+    if (playerPressed==='F4') {
+      exitGame();
     }
   }
 }
